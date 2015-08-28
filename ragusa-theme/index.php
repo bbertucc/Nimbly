@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
 <div id="hero">
-  <a href="#">
+  <a href="#" class="twelve_span">
     <video autoplay loop>
       <source src="template_media/website_background.mp4" type="video/mp4">
       <source src="template_media/website_background.ogv" type="video/ogg">
@@ -12,17 +12,17 @@
   </a>
 </div>
 <div id="hero_small">
-  <a href="#" style="background-image:url('temp_images/temp-1-medium.jpg')">
+  <a href="#" class="four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
     <div class="nested_content container">
       <h2>About Ragusa</h2>
     </div>
   </a>
-  <a href="#" style="background-image:url('temp_images/temp-2-medium.jpg')">
+  <a href="#" class="four_span" style="background-image:url('temp_images/temp-2-medium.jpg')">
     <div class="nested_content container">
       <h2>Todd's Bio</h2>
     </div>
   </a>
-  <a href="#" style="background-image:url('temp_images/temp-3-medium.jpg')">
+  <a href="#" class="four_span" style="background-image:url('temp_images/temp-3-medium.jpg')">
     <div class="nested_content container">
       <h2>BioMark</h2>
     </div>

@@ -1,61 +1,66 @@
 <?php include 'header.php' ?>
   <div id="custom_post_archive">
     <div class="row">
-      <div class="post twelve_span" style="background-image:url('temp_images/temp-2-large.jpg')">
-        <h2>Latest Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post six_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post six_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post six_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post six_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
-      <div class="post four_span" style="background-image:url('temp_images/temp-1-medium.jpg')">
-        <h2>Another Success Title</h2>
-        <p>Success excerpt goes here.</p>
-        <p><a href="#">View Success</a></p>
-      </div>
+      <a href="single.php" class="listed_post six_span" style="background-image:url('temp_images/temp-4-large.jpg')">
+        <div class="nested_content">
+          <span class="large_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post six_span" style="background-image:url('temp_images/temp-5-large.jpg')">
+        <div class="nested_content">
+          <span class="large_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post six_span" style="background-image:url('temp_images/temp-6-large.jpg')">
+        <div class="nested_content">
+          <span class="large_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post six_span" style="background-image:url('temp_images/temp-7-large.jpg')">
+        <div class="nested_content">
+          <span class="large_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post four_span" style="background-image:url('temp_images/temp-8-medium.jpg')">
+        <div class="nested_content">
+          <span class="small_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post four_span" style="background-image:url('temp_images/temp-9-medium.jpg')">
+        <div class="nested_content">
+          <span class="small_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post four_span" style="background-image:url('temp_images/temp-10-medium.jpg')">
+        <div class="nested_content">
+          <span class="small_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post four_span" style="background-image:url('temp_images/temp-11-medium.jpg')">
+        <div class="nested_content">
+          <span class="small_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post four_span" style="background-image:url('temp_images/temp-12-medium.jpg')">
+        <div class="nested_content">
+          <span class="small_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
+      <a href="single.php" class="listed_post four_span" style="background-image:url('temp_images/temp-13-medium.jpg')">
+        <div class="nested_content">
+          <span class="small_title">Another Success Title</span>
+          <span class="tagline">Success excerpt goes here.</span>
+        </div>
+      </a>
     </div>
     <div class="container">
       <?php include 'template_parts/next_previous_links.php' ?>  

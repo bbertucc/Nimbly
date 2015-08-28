@@ -224,10 +224,6 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   content: " ";
   display: table;
 }
-#hero a{
-  display: block;
-  width: 100%;
-}
 #hero video{
   position: absolute; 
   top: 0px;
@@ -243,7 +239,7 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   height: 0;     
   padding-bottom: 0;     
   padding-top: 0;     
-  padding-bottom: 42.5%;
+  padding-bottom: 45.5%;
 }
 #hero h1{
   max-width: 560px;
@@ -264,11 +260,6 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   background: #141515;
   color: white;
   padding: .5em;
-}
-#hero_small a{
-  display: inline-block;
-  width: 33.333%;
-  float: left;
 }
 #hero_small .nested_content{
   position: relative;
@@ -295,7 +286,7 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
     bottom: 0px;
   }
   #hero_small .nested_content{
-    padding-bottom: 42.5%;
+    padding-bottom: 45.5%;
   }
 }
 
@@ -459,6 +450,54 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   color: #5893E8;
 }
 
+/* Custom Post Archive */
+#custom_post_archive{
+  background: #141515;
+}
+#custom_post_archive .listed_post{
+  height: auto;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 250px;
+  overflow: hidden;
+}
+#custom_post_archive .listed_post:before, #custom_post_archive .listed_post:after{
+  content: " ";
+  display: table;
+}
+#custom_post_archive span{
+  margin:0 0 .5em ;
+  text-align: center;
+  display: block;
+}
+#custom_post_archive span.large_title{
+  font-size: 2em;
+}
+#custom_post_archive span.small_title{
+  font-size: 1.5em;
+}
+
+#custom_post_archive span.tagline{
+  margin-top: .5em;
+}
+#custom_post_archive .listed_post .nested_content{
+  position: relative;
+  overflow: hidden;     
+  height: 0;               
+  padding-bottom: 26%;
+  padding-top: 20%;
+  background-color: rgba(0,0,0,.55);
+  color: white;
+  transition: background-color .2s linear;
+  min-height: 250px;
+}
+
+#custom_post_archive .listed_post:hover .nested_content{
+  background-color: rgba(0,0,0,.75);
+  color: #4d79b6;
+}
 /* Next and Previous Links */
 #next_previous_links{
   margin: 2em 0;
