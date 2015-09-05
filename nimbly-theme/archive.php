@@ -1,32 +1,51 @@
 <?php 
 
-/* Template Name: Post Archive - Standard */
+/* Template Name: Standard Archive */
 
-include 'header.php'
+include 'header.php';
 
-if ( have_posts() ) : ?>
-  <div id="post_archive" style="background:url(<?php echo get_theme_mod( 'custom_background_image' ); ?>)">
-    <div class="container">
-      <h1 class="section_title"><?php the_title()?></h2>
-      <div class="row">
-        <?php while ( have_posts() ) : the_post(); ?>
-        <a href="<?php the_permalink();?>" class="post six_span">
-          <?php 
-            $hero_image = get_field('hero_image'); 
-            $hero_image_fallback = get_field('hero_image_fallback'); 
-            $size = 'thumbnail'; 
-            $hero_image_attachment = wp_get_attachment_image_src( $hero_image, $size );  
-            $hero_image_fallback_attachment = wp_get_attachment_image_src( $hero_image_fallback, $size );  
-            echo '<img alt="'.$hero_image['alt'].$hero_image_fallback['alt'].'" src="'.$hero_image_attachment[0].$hero_image_attachment[0].'">';
-          ?>
-          <span class="title"><?php the_title();?></span>
-          <span class="excerpt"><?php the_excerpt();?></span>
-        </a>    
-        <?php endwhile;?>
-      </div>
-      <?php include 'parts/next_previous_links.php' ?>  
+?>
+
+<div id="post_archive" style="background-image:url(<?php echo get_theme_mod( 'custom_background_image' ); ?>)" class="row">
+  <div class="container">
+    <h1 class="section_title"><?php single_cat_title()?></h1>
+    <?php 
+    $category_id = get_query_var('cat');
+    $archive_categories = get_field('archive_categories'); 
+    if (!$archive_categories) { $archive_categories = $category_id; };     
+
+    $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+    $the_query = new WP_Query( array( 
+      'category__in' => $archive_categories,
+      'paged' => $paged
+    ));
+    if ( $the_query->have_posts() ):
+      while ( $the_query->have_posts() ) : $the_query->the_post();
+      $post_count = $the_query->post_count; 
+      $post_number++;
+      if($post_number % 2 != 0) echo '<div class="row">';
+      include 'parts/hero_image_variables.php'
+    ?>  
+      <a href="<?php the_permalink();?>" class="post six_span">
+        <div class="hero" style="background-image: url(<?php echo $medium_hero_url; ?>)"></div>
+        <span class="title"><?php the_title();?></span>
+        <span class="excerpt"><?php the_excerpt();?></span>
+      </a>    
+      <?php 
+      if($post_number % 2 == 0 || $post_number == $post_count) echo '</div>';  
+      endwhile;?>
     </div>
-  </div>
-<?php endif;?>
+    
+    <?php if ($the_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+    <div id="next_previous_links" class="container row">
+      <div class="left"><?php echo get_next_posts_link( '<i class="fa fa-chevron-left"></i> Older Entries', $the_query->max_num_pages );  ?></div>
+      <div class="right"><?php echo get_previous_posts_link( 'Newer Entries <i class="fa fa-chevron-right"></i>' );  ?></div>
+    </div>
+    <?php } ?>
 
-<?php include 'footer.php' ?>
+    <?php  else: echo '<p>'._e('This category has no posts.').'</p>'; ?>  
+      
+  <?php endif;?>
+</div>
+
+<?php include 'footer.php'; ?>

@@ -23,27 +23,39 @@ function cnos_customizer_register( $wp_customize ) {
   $wp_customize->add_setting( 'copyright_information');
   $wp_customize->add_setting( 'tracking_codes');
 
-  $wp_customize->add_control( 'logo',
-    array(
-      'label' => 'Logo',
-      'section' => 'theme_customizations',
-      'type' => 'upload',
-    )
+  $wp_customize->add_control(
+    new WP_Customize_Upload_Control( 
+      $wp_customize, 
+      'logo', 
+        array(
+    		'label'      => __( 'Logo', 'nimbly' ),
+    		'section'    => 'theme_customizations',
+    		'settings'   => 'logo',
+    	)
+    ) 
   ); 
-  $wp_customize->add_control( 'inverted_logo',
-    array(
-      'label' => 'Inverted Logo',
-      'section' => 'theme_customizations',
-      'type' => 'upload',
-    )
-  );
-  $wp_customize->add_control( 'custom_background_image',
-    array(
-      'label' => 'Custom Background Image',
-      'section' => 'theme_customizations',
-      'type' => 'upload',
-    )
-  );
+  $wp_customize->add_control(
+    new WP_Customize_Upload_Control( 
+      $wp_customize, 
+      'inverted_logo', 
+        array(
+    		'label'      => __( 'Inverted Logo', 'nimbly' ),
+    		'section'    => 'theme_customizations',
+    		'settings'   => 'inverted_logo',
+    	)
+    ) 
+  ); 
+  $wp_customize->add_control(
+    new WP_Customize_Upload_Control( 
+      $wp_customize, 
+      'custom_background_image', 
+        array(
+    		'label'      => __( 'Custom Background Image', 'nimbly' ),
+    		'section'    => 'theme_customizations',
+    		'settings'   => 'custom_background_image',
+    	)
+    ) 
+  ); 
   $wp_customize->add_control( 'featured_articles_title',
     array(
       'label' => 'Featured Articles Title',

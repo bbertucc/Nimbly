@@ -3,7 +3,7 @@
   $the_query = new WP_Query($args);
   if ($the_query->have_posts()):
   ?>
-  <div id="featured_articles" style="background:url(<?php echo get_theme_mod( 'custom_background_image' ); ?>)">
+  <div id="featured_articles" style="background-image:url(<?php echo get_theme_mod( 'custom_background_image' ); ?>)">
     <div class="container row">
       <?php 
         $featured_articles_title = get_theme_mod( 'featured_articles_title'); 
@@ -12,15 +12,15 @@
       <?php  while ( $the_query->have_posts() ) : $the_query->the_post();?>
       <a title="Link to <?php the_title();?>" href="<?php the_permalink();?>">
         <?php 
+          $hero_media_type = get_field('hero_media_type');
           $hero_image = get_field('hero_image'); 
           $hero_image_fallback = get_field('hero_image_fallback'); 
-          $size = 'thumbnail';
-          $hero_image_attachment = wp_get_attachment_image_src( $hero_image, $size );  
-          $hero_image_fallback_attachment = wp_get_attachment_image_src( $hero_image_fallback, $size );  
-          echo '<img alt="'.$hero_image['alt'].$hero_image_fallback['alt'].'" src="'.$hero_image_attachment[0].$hero_image_attachment[0].'">';
-        ?>
-        <span class="category"><?php the_category();?></span>
-        <span class="title"><?php the_permalink();?></span>
+          if($hero_media_type == 'image') $thumbnail_hero_url = $hero_image['sizes'][thumbnail]; 
+          if($hero_media_type == 'video_loop') $thumbnail_hero_url = $hero_image_fallback['sizes'][thumbnail];
+          echo '<img alt="Image for '.get_the_title().'" src="'.$thumbnail_hero_url.'">';
+        ?><?php echo $post_id ?>
+        <span class="category"><?php echo get_the_category()[0]->cat_name;?></span>
+        <span class="title"><?php the_title();?></span>
       </a>
       <?php endwhile;?>
     </div>  

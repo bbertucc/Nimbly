@@ -6,57 +6,6 @@ define( 'ACF_LITE' , true );
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_nimbly-content-options',
-		'title' => 'Nimbly Content Options',
-		'fields' => array (
-			array (
-				'key' => 'field_55e47650663cc',
-				'label' => 'Show Post Meta',
-				'name' => 'show_post_meta',
-				'type' => 'true_false',
-				'instructions' => 'Show social share links,	post date, and next/previous links.',
-				'message' => '',
-				'default_value' => 1,
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_type',
-					'operator' => '!=',
-					'value' => 'front_page',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'page_type',
-					'operator' => '!=',
-					'value' => 'posts_page',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '!=',
-					'value' => 'template-custom_archive.php',
-					'order_no' => 0,
-					'group_no' => 2,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
 		'id' => 'acf_nimbly-custom-archive-options',
 		'title' => 'Nimbly Custom Archive Options',
 		'fields' => array (
@@ -64,14 +13,14 @@ if(function_exists("register_field_group"))
 				'key' => 'field_55e4b10e40a74',
 				'label' => 'Archive Categories',
 				'name' => 'archive_categories',
-				'type' => 'text',
-				'instructions' => 'Enter category IDs to limit archive to display posts in one or more categories. Add comma between each new category ID. Leave blank to display all posts.',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'type' => 'taxonomy',
+				'instructions' => 'Select categories of posts to display. If no categories are selected, the archive will display all posts.',
+				'taxonomy' => 'category',
+				'field_type' => 'checkbox',
+				'allow_null' => 0,
+				'load_save_terms' => 0,
+				'return_format' => 'id',
+				'multiple' => 0,
 			),
 		),
 		'location' => array (
@@ -87,8 +36,15 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'default',
+			'layout' => 'no_box',
 			'hide_on_screen' => array (
+				0 => 'the_content',
+				1 => 'excerpt',
+				2 => 'discussion',
+				3 => 'comments',
+				4 => 'revisions',
+				5 => 'featured_image',
+				6 => 'categories',
 			),
 		),
 		'menu_order' => 0,
@@ -117,16 +73,23 @@ if(function_exists("register_field_group"))
 				'key' => 'field_55e1f31d40706',
 				'label' => 'Small Hero Content',
 				'name' => 'small_hero_content',
-				'type' => 'post_object',
+				'type' => 'relationship',
 				'instructions' => 'Select three pieces of content that will appear bellow the homepage hero.',
+				'return_format' => 'object',
 				'post_type' => array (
 					0 => 'all',
 				),
 				'taxonomy' => array (
 					0 => 'all',
 				),
-				'allow_null' => 0,
-				'multiple' => 0,
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'post_type',
+					1 => 'post_title',
+				),
+				'max' => 3,
 			),
 		),
 		'location' => array (
@@ -162,16 +125,16 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_55e1f47491089',
-				'label' => 'Hero Media Type',
+				'label' => 'Hero Media',
 				'name' => 'hero_media_type',
 				'type' => 'select',
 				'choices' => array (
+					'none' => 'None',
 					'image' => 'Image',
 					'video_loop' => 'Video Loop',
-					'none' => 'None',
 				),
 				'default_value' => '',
-				'allow_null' => 1,
+				'allow_null' => 0,
 				'multiple' => 0,
 			),
 			array (
@@ -179,6 +142,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Hero Image',
 				'name' => 'hero_image',
 				'type' => 'image',
+				'instructions' => 'Recommended Image Size: 2120px by 1400px',
 				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
@@ -186,7 +150,7 @@ if(function_exists("register_field_group"))
 						array (
 							'field' => 'field_55e1f47491089',
 							'operator' => '==',
-							'value' => 'Image',
+							'value' => 'image',
 						),
 					),
 					'allorany' => 'all',
@@ -202,6 +166,17 @@ if(function_exists("register_field_group"))
 				'type' => 'file',
 				'instructions' => 'Upload each video codec so that videos play on a range of devices.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_55e1f47491089',
+							'operator' => '==',
+							'value' => 'video_loop',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'save_format' => 'object',
 				'library' => 'all',
 			),
@@ -212,6 +187,17 @@ if(function_exists("register_field_group"))
 				'type' => 'file',
 				'instructions' => 'Upload each video codec so that videos play on a range of devices.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_55e1f47491089',
+							'operator' => '==',
+							'value' => 'video_loop',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'save_format' => 'object',
 				'library' => 'all',
 			),
@@ -222,6 +208,17 @@ if(function_exists("register_field_group"))
 				'type' => 'file',
 				'instructions' => 'Upload each video codec so that videos play on a range of devices.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_55e1f47491089',
+							'operator' => '==',
+							'value' => 'video_loop',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'save_format' => 'object',
 				'library' => 'all',
 			),
@@ -231,6 +228,18 @@ if(function_exists("register_field_group"))
 				'name' => 'hero_image_fallback',
 				'type' => 'image',
 				'instructions' => 'Upload an image to display on devices that don\'t support video.',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_55e1f47491089',
+							'operator' => '==',
+							'value' => 'video_loop',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'save_format' => 'object',
 				'preview_size' => 'large',
 				'library' => 'all',
@@ -245,23 +254,26 @@ if(function_exists("register_field_group"))
 					'order_no' => 0,
 					'group_no' => 0,
 				),
-			),
-			array (
 				array (
 					'param' => 'page_type',
 					'operator' => '!=',
 					'value' => 'posts_page',
-					'order_no' => 0,
-					'group_no' => 1,
+					'order_no' => 1,
+					'group_no' => 0,
 				),
-			),
-			array (
 				array (
 					'param' => 'page_template',
 					'operator' => '!=',
 					'value' => 'template-custom_archive.php',
-					'order_no' => 0,
-					'group_no' => 2,
+					'order_no' => 2,
+					'group_no' => 0,
+				),
+				array (
+					'param' => 'ef_media',
+					'operator' => '!=',
+					'value' => 'all',
+					'order_no' => 3,
+					'group_no' => 0,
 				),
 			),
 		),
@@ -291,14 +303,14 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_55e46bc8bacb9',
-				'label' => 'Embedded Media Type',
+				'label' => 'Info Section Added Media',
 				'name' => 'info_section_media_type',
 				'type' => 'select',
 				'choices' => array (
-					'Image' => 'Image',
-					'Map' => 'Map',
-					'Video Embed' => 'Video Embed',
-					'None' => 'None',
+					'none' => 'None',
+					'image' => 'Image',
+					'map' => 'Map',
+					'video_embed' => 'Video Embed',
 				),
 				'default_value' => '',
 				'allow_null' => 0,
@@ -309,13 +321,15 @@ if(function_exists("register_field_group"))
 				'label' => 'Image',
 				'name' => 'info_section_image',
 				'type' => 'image',
+				'instructions' => 'Recommended Image Size: 1060px by 700px',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
 							'field' => 'field_55e46bc8bacb9',
 							'operator' => '==',
-							'value' => 'Image',
+							'value' => 'image',
 						),
 					),
 					'allorany' => 'all',
@@ -336,7 +350,7 @@ if(function_exists("register_field_group"))
 						array (
 							'field' => 'field_55e46bc8bacb9',
 							'operator' => '==',
-							'value' => 'Map',
+							'value' => 'map',
 						),
 					),
 					'allorany' => 'all',
@@ -351,13 +365,14 @@ if(function_exists("register_field_group"))
 				'label' => 'Video Embed Code',
 				'name' => 'info_section_video_embed_code',
 				'type' => 'textarea',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
 							'field' => 'field_55e46bc8bacb9',
 							'operator' => '==',
-							'value' => 'Video Embed',
+							'value' => 'video_embed',
 						),
 					),
 					'allorany' => 'all',
@@ -377,7 +392,45 @@ if(function_exists("register_field_group"))
 				'placeholder' => '',
 				'maxlength' => '',
 				'rows' => '',
-				'formatting' => 'br',
+				'formatting' => 'html',
+			),
+			array (
+				'key' => 'field_55e4c23ed8c0c',
+				'label' => 'Info Section Links',
+				'name' => 'info_section_links',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_55e4c255d8c0d',
+						'label' => 'Link Name',
+						'name' => 'link_name',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_55e4c25fd8c0e',
+						'label' => 'Link URL',
+						'name' => 'link_url',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => '+ Add Link',
 			),
 		),
 		'location' => array (
@@ -389,23 +442,19 @@ if(function_exists("register_field_group"))
 					'order_no' => 0,
 					'group_no' => 0,
 				),
-			),
-			array (
 				array (
 					'param' => 'page_type',
-					'operator' => '==',
+					'operator' => '!=',
 					'value' => 'posts_page',
-					'order_no' => 0,
-					'group_no' => 1,
+					'order_no' => 1,
+					'group_no' => 0,
 				),
-			),
-			array (
 				array (
 					'param' => 'page_template',
-					'operator' => '==',
+					'operator' => '!=',
 					'value' => 'template-custom_archive.php',
-					'order_no' => 0,
-					'group_no' => 2,
+					'order_no' => 2,
+					'group_no' => 0,
 				),
 			),
 		),
