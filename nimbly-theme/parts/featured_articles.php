@@ -1,5 +1,5 @@
 <?php 
-  $args = array( 'posts_per_page' => 8, 'post__in' => get_option('sticky_posts'));
+  $args = array( 'posts_per_page' => 8, 'post__in' => get_option('sticky_posts'), 'ignore_sticky_posts' => true);
   $the_query = new WP_Query($args);
   if ($the_query->have_posts()):
   ?>
