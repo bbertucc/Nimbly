@@ -6,7 +6,7 @@ function cnos_customizer_register( $wp_customize ) {
   //Add Listing Page Descriptions 
   $wp_customize->add_section( 'theme_customizations', array(
       'title' => __('Nimbly Customizations'),
-      'description' => __('Update look and feel.'),
+      'description' => __('Add custom style elements and embed code.'),
       'priority' => 35,
     )
   );
