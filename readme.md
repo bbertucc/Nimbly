@@ -13,6 +13,9 @@ Nimbly includes a custom template for archive pages. Choose the **Custom Archive
 ### Included Plugins
 This theme includes the free [Advanced Custom Fields] plugin (version 4.4.3) and the [ACF Repeater Field plugin] (version 1.1.1). Nimbly also includes configured classes for the [Gravity Forms] plugin, and the [Font Awesome] icon font.
 
+### Contributing to Nimbly
+Nimbly is currently in Alpha. Features may be completely reinvisions and bugs may still need to be squashed. Feedback is mightily appreciated.
+
 [Blake Bertuccelli]:https://www.linkedin.com/in/blakebertuccelli
 [Advanced Custom Fields]:http://www.advancedcustomfields.com/
 [ACF Repeater Field plugin]:http://www.advancedcustomfields.com/resources/repeater/y87rzmvcd82Ta6JK
