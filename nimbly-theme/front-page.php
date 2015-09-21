@@ -1,8 +1,8 @@
 <?php include 'header.php' ?>
 <?php 
-if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php
+if ( have_posts() ) : while ( have_posts() ) : the_post(); 
   $hero_content = get_field('hero_content');
+  $show_featured_articles_section = get_field('show_featured_articles_section');
   if($hero_content): 
     $post = $hero_content; setup_postdata( $post ); 
 ?>
@@ -20,6 +20,6 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <?php endforeach; wp_reset_postdata(); ?>
   </div>
   <?php  endif;?>
+  <?php if($show_featured_articles_section) include 'parts/featured_articles.php'; ?>
 <?php endwhile; endif; ?>
-<?php include 'parts/featured_articles.php' ?>
 <?php include 'footer.php' ?>

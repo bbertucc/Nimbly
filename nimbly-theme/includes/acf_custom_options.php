@@ -50,6 +50,65 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
+		'id' => 'acf_nimbly-content-options-2',
+		'title' => 'Nimbly Content Options',
+		'fields' => array (
+			array (
+				'key' => 'field_55fdfcca487e7',
+				'label' => 'Show Featured Articles Section',
+				'name' => 'show_featured_articles_section',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
+			array (
+				array (
+					'param' => 'page_type',
+					'operator' => '==',
+					'value' => 'posts_page',
+					'order_no' => 0,
+					'group_no' => 2,
+				),
+			),
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-contemporary.php',
+					'order_no' => 0,
+					'group_no' => 3,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 4,
+	));
+	register_field_group(array (
 		'id' => 'acf_nimbly-front-page-options',
 		'title' => 'Nimbly Front Page Options',
 		'fields' => array (
@@ -90,6 +149,18 @@ if(function_exists("register_field_group"))
 					1 => 'post_title',
 				),
 				'max' => 3,
+			),
+			array (
+				'key' => 'field_55fdf9b42da93',
+				'label' => 'Post List Category ',
+				'name' => 'post_list_category',
+				'type' => 'taxonomy',
+				'taxonomy' => 'category',
+				'field_type' => 'checkbox',
+				'allow_null' => 1,
+				'load_save_terms' => 0,
+				'return_format' => 'object',
+				'multiple' => 0,
 			),
 		),
 		'location' => array (
