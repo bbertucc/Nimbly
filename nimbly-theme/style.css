@@ -1,7 +1,10 @@
 /*
 Theme Name: Nimbly
+Theme URI: https://github.com/bbertucc/Nimbly
 Author: Blake Bertuccelli
-Version: Alpha
+Author URI: https://www.linkedin.com/in/blakebertuccelli
+Description: A very nimble WordPress theme.
+Version: 1.0
 */
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
@@ -241,16 +244,16 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   background-repeat: repeat;
   color: #f8f7f3;
 }
-#featured_articles a{
+#featured_articles a.post{
   display: inline-block;
   height: 350px;
   line-height: 1em;
 }
-#featured_articles span{
+#featured_articles a.post span{
   display: block;
   letter-spacing: .1em;
 }
-#featured_articles span.thumbnail{
+#featured_articles a.post span.thumbnail{
   width:100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -259,27 +262,30 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   padding-bottom: 56.6%;
   margin-bottom: .25em; 
 }
-#featured_articles span.category{
+#featured_articles a.post span.category{
   color: #AFAFAF;
   font-size: .8em;
   text-transform: uppercase;
 }
-#featured_articles span.category, #featured_articles a span.title{
+#featured_articles a.post span.category, #featured_articles a.post span.title{
   padding: .25em .5em;
 }
-#featured_articles a span.title{
+#featured_articles a.post span.title{
   color: #f8f7f3;
   transition: color .2s linear;
-}
-#featured_articles a:hover span.title{
-  color: #5893E8;
 }
 #featured_articles h1{
   background: none;
   padding: 0;
 }
+#featured_articles h1 a{
+  color: white;
+}
+#featured_articles a.post:hover span.title, #featured_articles h1 a:hover{
+  color: #5893E8;
+}
 @media (max-width: 768px){
-  #featured_articles a{
+  #featured_articles a.post{
     height: 250px;
     margin-bottom: 1em;
   }
