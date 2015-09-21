@@ -6,7 +6,7 @@ require_once('includes/wp_customize.php');
 require_once('includes/theme_widgets.php');
 
 //Include Advanced Custom Fields Plugin, Repeater Plugin, ACF Options and Fields 
-include_once('plugins/advanced-custom-fields/acf.php' );
+include_once('plugins/acf/acf.php' );
 include_once('plugins/acf-repeater/acf-repeater.php');
 require_once('includes/acf_custom_options.php');
 
@@ -18,6 +18,7 @@ function register_my_menu() {
   register_nav_menu( 'primary', __( 'Primary Menu', 'theme-slug' ) );
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
+
 
 //Add SVG Support
 function cc_mime_types($mimes) {
@@ -50,4 +51,7 @@ function remove_gravityforms_style() {
 	wp_dequeue_style('gforms_css');
 }
 add_action('wp_print_styles', 'remove_gravityforms_style');
+
+//Load Custom Functions
+require_once('includes/custom_functions.php');
 ?>
