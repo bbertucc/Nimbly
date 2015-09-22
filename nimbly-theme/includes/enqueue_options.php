@@ -5,6 +5,7 @@ function load_scripts_and_styles() {
 	//Styles
   wp_enqueue_style( 'stylesheet', get_stylesheet_uri() );
   wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
+  wp_enqueue_style( 'developer-custom-styles', get_template_directory_uri() . '/developer/custom_styles.css' );
   if ( class_exists( 'GFCommon' ) ) wp_enqueue_style( 'gravity-forms-components', get_template_directory_uri() . '/added_styles/gravity_forms.css' );
 
 	//jQuery Dependent Scripts
