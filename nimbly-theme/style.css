@@ -291,6 +291,73 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   }
 }
 
+/* Post List */
+#post_list{
+  background: #1E1F1F;
+  background-position: center center;
+  background-repeat: repeat;
+  color: #f8f7f3;
+}
+#post_list a.post{
+  display: inline-block;
+  height: 300px;
+  line-height: 1.2em;
+  padding: .5em;
+  overflow: hidden;
+}
+#post_list a.post span{
+  display: block;
+  letter-spacing: .1em;
+}
+#post_list a.post span.thumbnail{
+  width:100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #5D5D5D;
+  padding-bottom: 56.6%;
+}
+#post_list a.post span.category{
+  font-size: .8em;
+  text-transform: uppercase;
+}
+#post_list a.post span.category, #post_list a.post span.title{
+  color: #AFAFAF;
+  background-color: #2b2c2c;
+  padding-top: 5px;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+#post_list a.post span.title{
+  padding-bottom: 10px;
+  max-height: 280px;
+  overflow: hidden;
+  transition: color .2s linear;
+}
+#post_list a.category_link:after{
+  content: ", ";
+}
+#post_list a.category_link:last-of-type:after{
+  content: ""
+}
+#post_list h1{
+  background: none;
+  padding: 0;
+}
+#post_list h1 a{
+  color: white;
+}
+#post_list a.post:hover span.title, #post_list h1 a:hover{
+  color: #5893E8;
+}
+@media (max-width: 768px){
+  #post_list a.post{
+    height: 250px;
+    margin-bottom: 1em;
+  }
+}
+
+
 /* Post Page  */
 #post{
   min-height: 750px;
@@ -428,11 +495,11 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   color: #5893E8;
 }
 
-/* Custom Post Archive */
-#custom_post_archive{
+/* Custom Archive Template */
+#custom_archive{
   background: #141515;
 }
-#custom_post_archive .listed_post{
+#custom_archive .listed_post{
   height: auto;
   position: relative;
   background-size: cover;
@@ -442,26 +509,26 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   overflow: hidden;
   min-height: 300px;
 }
-#custom_post_archive .listed_post:before, #custom_post_archive .listed_post:after{
+#custom_archive .listed_post:before, #custom_archive .listed_post:after{
   content: " ";
   display: table;
 }
-#custom_post_archive .listed_post span{
+#custom_archive .listed_post span{
   margin:0 0 .5em ;
   text-align: center;
   display: block;
 }
-#custom_post_archive .listed_post span.title{
+#custom_archive .listed_post span.title{
   font-size: 2em;
   line-height: line-height: 1.25em;
 }
-#custom_post_archive .listed_post.four_span span.title{
+#custom_archive .listed_post.four_span span.title{
   font-size: 1.5em;
 }
 custom_post_archive span.excerpt{
   margin-top: .5em;
 }
-#custom_post_archive .listed_post .nested_content{
+#custom_archive .listed_post .nested_content{
   position: relative;
   overflow: hidden;
   height: 0;
@@ -471,12 +538,12 @@ custom_post_archive span.excerpt{
   padding: 18% 1em 22%;
   min-height: 300px;
 }
-#custom_post_archive .listed_post:hover .nested_content{
+#custom_archive .listed_post:hover .nested_content{
   background-color: rgba(0,0,0,.75);
   color: #4d79b6;
 }
 @media (max-width: 768px){
-  #custom_post_archive .listed_post .nested_content{
+  #custom_archive .listed_post .nested_content{
     padding: 22% 1em 34.6%;
   }
 }
@@ -493,9 +560,8 @@ custom_post_archive span.excerpt{
   background: #2b2c2c;
   font-size: .9em;
 }
-#footer .inverted_logo{
-  width: 200px;
-  height: auto;
+#footer .widget{
+  padding: 0 1%;
 }
 #footer a{
   color: #a9a9aa;
@@ -521,15 +587,6 @@ custom_post_archive span.excerpt{
 }
 #footer .contact_links{
   font-size: 1.1em;
-}
-#footer .contact_links i{
-  margin-left: .2em;
-  font-size: 1.15em;
-}
-#footer .contact_links i.fa-twitter{
-  border-left: 1px solid #414141; 
-  padding-left: .5em;
-  margin-bottom: 2em;
 }
 #footer p{
   background: #404140;
@@ -708,9 +765,6 @@ label *, label *:before, label *:after {
 }
 
 /* Non-Core Elements */
-.subscribe-button-inner{
-  padding-top: 20px!important;
-}
 .acf-map{
   width: 100%;
   height: 250px;
