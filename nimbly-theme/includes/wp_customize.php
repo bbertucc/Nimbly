@@ -15,12 +15,8 @@ function cnos_customizer_register( $wp_customize ) {
 
   //Add Customizer Settings 
   $wp_customize->add_setting( 'logo');
-  $wp_customize->add_setting( 'inverted_logo');
   $wp_customize->add_setting( 'custom_background_image');
   $wp_customize->add_setting( 'featured_articles_category');
-  $wp_customize->add_setting( 'twitter_url');
-  $wp_customize->add_setting( 'fb_url');
-  $wp_customize->add_setting( 'linkedin_url');
   $wp_customize->add_setting( 'copyright_information');
   $wp_customize->add_setting( 'tracking_codes');
   
@@ -33,17 +29,6 @@ function cnos_customizer_register( $wp_customize ) {
     		'label'      => __( 'Logo', 'nimbly' ),
     		'section'    => 'theme_customizations',
     		'settings'   => 'logo',
-    	)
-    ) 
-  ); 
-  $wp_customize->add_control(
-    new WP_Customize_Upload_Control( 
-      $wp_customize, 
-      'inverted_logo', 
-        array(
-    		'label'      => __( 'Inverted Logo', 'nimbly' ),
-    		'section'    => 'theme_customizations',
-    		'settings'   => 'inverted_logo',
     	)
     ) 
   ); 
@@ -68,27 +53,6 @@ function cnos_customizer_register( $wp_customize ) {
               'settings' => 'featured_articles_category',
           )
       )
-  );
-  $wp_customize->add_control( 'twitter_url',
-    array(
-      'label' => 'Twitter URL',
-      'section' => 'theme_customizations',
-      'type' => 'text',
-    )
-  );
-  $wp_customize->add_control( 'fb_url',
-    array(
-      'label' => 'Facebook URL',
-      'section' => 'theme_customizations',
-      'type' => 'text',
-    )
-  );
-  $wp_customize->add_control( 'linkedin_url',
-    array(
-      'label' => 'LinkedIn URL',
-      'section' => 'theme_customizations',
-      'type' => 'text',
-    )
   );
   $wp_customize->add_control( 'copyright_information',
     array(
