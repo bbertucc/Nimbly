@@ -1,11 +1,11 @@
 <?php 
 
-/* Template Name: Custom Hero Archive */
+/* Template Name: Custom Archive */
 
 include 'header.php';
 
 ?>
-<div id="custom_post_archive">
+<div id="custom_archive">
   <div class="row">
   <?php 
   $archive_categories = get_field('archive_categories');      

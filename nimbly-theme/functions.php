@@ -15,7 +15,7 @@ require_once('includes/enqueue_options.php');
 
 //Register Menu
 function register_my_menu() {
-  register_nav_menu( 'primary', __( 'Primary Menu', 'theme-slug' ) );
+  register_nav_menu( 'primary', __( 'Primary Menu', 'nimbly' ) );
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
 
@@ -52,6 +52,6 @@ function remove_gravityforms_style() {
 }
 add_action('wp_print_styles', 'remove_gravityforms_style');
 
-//Load Custom Functions
-require_once('includes/custom_functions.php');
+//Load /developer Functions
+require_once('developer/custom_functions.php');
 ?>
