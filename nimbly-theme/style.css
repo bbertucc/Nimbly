@@ -289,7 +289,7 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
 }
 @media (max-width: 768px){
   #featured_articles a.post{
-    height: 250px;
+    height: auto;
     margin-bottom: 1em;
   }
 }
