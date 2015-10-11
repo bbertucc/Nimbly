@@ -9,6 +9,5 @@
 	$( "#header, #hero" ).addClass("inside_sticky_area");
 	$( ".inside_sticky_area" ).wrapAll( "<div id='sticky_wrapper' />");
 	$("#header").stick_in_parent();
-  $(window).resize(function () { $(document.body).trigger("sticky_kit:recalc") });
 
 })( jQuery );
