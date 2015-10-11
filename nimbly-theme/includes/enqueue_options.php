@@ -10,6 +10,7 @@ function load_scripts_and_styles() {
 
 	//jQuery Dependent Scripts
   $jquery_scripts=array(
+    'sticky-kit'=>'/plugins/sticky-kit/jquery.sticky-kit.min.js',
     'theme'=>'/scripts.js',
   );
   foreach($jquery_scripts as $key=>$sc){
