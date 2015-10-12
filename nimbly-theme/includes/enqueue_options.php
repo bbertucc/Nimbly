@@ -10,8 +10,8 @@ function load_scripts_and_styles() {
 
 	//jQuery Dependent Scripts
   $jquery_scripts=array(
-    'sticky-kit'=>'/plugins/sticky-kit/jquery.sticky-kit.min.js',
-    'theme'=>'/scripts.js',
+    'theme-scripts'=>'/scripts.js',
+    'developer-custom-scripts'=>'/developer/custom_scripts.js',    
   );
   foreach($jquery_scripts as $key=>$sc){
     wp_register_script( $key, get_template_directory_uri() . $sc, array('jquery'),'',true );

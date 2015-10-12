@@ -1,6 +1,3 @@
 [submodule "nimbly-theme/plugins/acf"]
 	path = nimbly-theme/plugins/acf
 	url = git://github.com/elliotcondon/acf
-[submodule "nimbly-theme/plugins/sticky-kit"]
-	path = nimbly-theme/plugins/sticky-kit
-	url = https://github.com/leafo/sticky-kit.git
