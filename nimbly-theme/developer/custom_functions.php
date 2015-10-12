@@ -1,4 +1,5 @@
 <?php
-//Add any functions
+
+/* You code here. */
 
 ?>
