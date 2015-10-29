@@ -19,7 +19,6 @@ function register_my_menu() {
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
 
-
 //Add SVG Support
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
