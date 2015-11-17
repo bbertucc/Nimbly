@@ -1,7 +1,7 @@
 <?php
 
 //Register Custumizer, Sections, Settings and Controls
-function cnos_customizer_register( $wp_customize ) {
+function nimbly_customizer_register( $wp_customize ) {
   //Removed Unused Areas
   $wp_customize->remove_section( 'colors' );
 
@@ -69,7 +69,7 @@ function cnos_customizer_register( $wp_customize ) {
     )
   );
 }
-add_action( 'customize_register', 'cnos_customizer_register' ); 
+add_action( 'customize_register', 'nimbly_customizer_register' ); 
 
 //Add custom Category control (Via http://code.tutsplus.com/articles/custom-controls-in-the-theme-customizer--wp-34556)
 if (class_exists('WP_Customize_Control')) {
