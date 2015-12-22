@@ -9,10 +9,10 @@ The "developer" folder can be used to further customize Nimbly. Developers can a
 
 **Custom Theme Hooks**
 * `nimbly_post_meta`: Hook functions into the post page meta section. Additional actions hooked into `nimbly_post_meta` includes:
-⋅⋅* `nimbly_post_share_buttons`: Adds basic Facebook and Twitter share buttons.
-⋅⋅*`nimbly_post_data`: Adds the post date.
+  * `nimbly_post_share_buttons`: Adds basic Facebook and Twitter share buttons.
+  *`nimbly_post_data`: Adds the post date.
 * `nimbly_hero`: Hook functions into the top hero section. Additional actions hooked into `nimbly_hero` include:
-⋅⋅* `nimbly_hero_content`: Adds optional hero images and video.
+  * `nimbly_hero_content`: Adds optional hero images and video.
 *More Nimbly-specific Action Hooks coming soon...*
 =======
 ### Custom Theme Hooks
