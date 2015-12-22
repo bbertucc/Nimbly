@@ -5,7 +5,7 @@ A very nimble and easy-to-use WordPress theme by [Blake Bertuccelli].
 Nimbly includes a number of simple customizations. WordPress Administers can add a logo, update a background image, change segment titles, insert social media links, and add tracking codes using the WP Customizer under the Appearance menu. Nimbly also includes customizable widget areas in the footer and the ability to add a custom header menu.
 
 ### /developer
-The "developer" folder can be used to further customize Nimbly. Developers can add [WordPress Action Hooks] to the "custom_functions.php" files, add their styles to "custom_styles.css" or add javascript to "custom_scripts.js". "/developer" will not be effected by future Nimbly updates.
+The "developer" folder can be used to further customize Nimbly. Developers can add [WordPress Action Hooks] to the "custom_functions.php" files, add their styles to "custom_styles.css" or add javascript to "custom_scripts.js". "/developer" will not be effected by future Nimbly updates, so any code that you write or files that you add can be stored in the folder.
 
 **Custom Theme Hooks**
 * `nimbly_post_meta`: Hook functions into the post page meta section. Additional actions hooked into `nimbly_post_meta` includes:
