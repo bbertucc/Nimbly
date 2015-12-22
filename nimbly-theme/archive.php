@@ -5,7 +5,6 @@
 include 'header.php';
 
 ?>
-
 <div id="post_archive" style="background-image:url(<?php echo get_theme_mod( 'custom_background_image' ); ?>)" class="row">
   <div class="container">
     <h1 class="section_title"><?php single_cat_title()?></h1>
@@ -24,7 +23,7 @@ include 'header.php';
       $post_count = $the_query->post_count; 
       $post_number++;
       if($post_number % 2 != 0) echo '<div class="row">';
-      include 'parts/hero_image_variables.php'
+      include 'includes/hero_image_variables.php'
     ?>  
       <a href="<?php the_permalink();?>" class="post six_span">
         <div class="hero" style="background-image: url(<?php echo $medium_hero_url; ?>)"></div>

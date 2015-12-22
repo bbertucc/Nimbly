@@ -9,7 +9,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
   if($hero_content): 
     $post = $hero_content; setup_postdata( $post ); 
 ?>
-  <?php include 'parts/hero.php' ?>
+  <?php nimbly_hero(); ?>
   <?php wp_reset_postdata(); endif; ?>
   <?php if( $small_hero_content ): ?>
   <div id="small_hero">
@@ -41,7 +41,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
       ));
       if ( $the_query->have_posts() ):
         while ( $the_query->have_posts() ) : $the_query->the_post();
-        include 'parts/hero_image_variables.php' ?>
+        include 'includes/hero_image_variables.php' ?>
       <a title="Link to <?php the_title();?>" href="<?php the_permalink();?>" class="three_span post">
         <span class="thumbnail" style="background-image: url(<?php echo $thumbnail_hero_url; ?>)"></span>
         <span class="category"><?php echo get_the_category()[0]->cat_name;?></span>
