@@ -14,6 +14,15 @@ The "developer" folder can be used to further customize Nimbly. Developers can a
 * `nimbly_hero`: Hook functions into the top hero section. Additional actions hooked into `nimbly_hero` include:
 ⋅⋅* `nimbly_hero_content`: Adds optional hero images and video.
 *More Nimbly-specific Action Hooks coming soon...*
+=======
+### Custom Theme Hooks
+
+* `nimbly_post_meta`: Hook function for a the meta section, right bellow a post's content. Additional actions hooked into `nimbly_post_meta` include:
+  * `nimbly_post_share_buttons`: Adds basic Facebook and Twitter share buttons.
+  * `nimbly_post_data`: Adds the post date.
+
+*More Nimbly-specific hooks coming soon...*
+>>>>>>> origin/master
 
 ### Post Customizations
 Hero media can be added to each post or page and Nimbly includes a special sidebar meta section where users can add maps, images, or embed video content. All this custom content can be updated with editing any post or page.
