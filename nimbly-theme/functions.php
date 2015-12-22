@@ -13,6 +13,9 @@ require_once('includes/acf_custom_options.php');
 //Load Scripts and Styles
 require_once('includes/enqueue_options.php');
 
+//Nimbly Hooks
+require_once('includes/hooks.php');
+
 //Register Menu
 function register_my_menu() {
   register_nav_menu( 'primary', __( 'Primary Menu', 'nimbly' ) );
