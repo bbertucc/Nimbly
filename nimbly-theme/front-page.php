@@ -42,7 +42,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
       if ( $the_query->have_posts() ):
         while ( $the_query->have_posts() ) : $the_query->the_post();
         include 'includes/hero_image_variables.php' ?>
-      <a title="Link to <?php the_title();?>" href="<?php the_permalink();?>" class="three_span post">
+      <a title="Link to <?php the_title();?>" href="<?php the_permalink();?>" class="three_span listed_post">
         <span class="thumbnail" style="background-image: url(<?php echo $thumbnail_hero_url; ?>)"></span>
         <span class="category"><?php echo get_the_category()[0]->cat_name;?></span>
         <span class="title"><?php the_title();?></span>

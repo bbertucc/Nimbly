@@ -2,9 +2,9 @@
 
 <?php  if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-  <?php include 'parts/hero.php';  ?>
-
-  <div id="post">
+  <?php nimbly_hero(); ?>
+  
+  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="container">
       <div class="row">
         <div class="nine_span one_space">
@@ -42,9 +42,7 @@
       <?php if(is_single()):?>
       <div class="row">
         <div class="nine_span one_space">
-          <div class="meta">
-            Posted: <?php the_date(); ?> <span class="right">Share: <a target="blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter fa-lg"></i></a> <a target="blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook fa-lg"></i></a> <a target="blank" href="https://www.linkedin.com/cws/share?url=<?php the_permalink(); ?>"><i class="fa fa-linkedin fa-lg"></i></a></span>
-          </div>
+          <?php nimbly_post_meta(); ?>
           <?php include 'parts/next_previous_links.php' ?>  
         </div>
       </div>

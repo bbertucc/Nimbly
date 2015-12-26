@@ -17,7 +17,7 @@
         ?>
       </h1>
       <?php  while ( $the_query->have_posts() ) : $the_query->the_post();?>
-      <a title="Link to <?php the_title();?>" href="<?php the_permalink();?>" class="four_span post">
+      <a title="Link to <?php the_title();?>" href="<?php the_permalink();?>" class="four_span listed_post">
         <?php include(dirname(__FILE__) . '/../includes/hero_image_variables.php'); ?>
         <span class="thumbnail" style="background-image: url(<?php echo $thumbnail_hero_url; ?>)"></span>
         <span class="category"><?php echo get_the_category()[0]->cat_name;?></span>

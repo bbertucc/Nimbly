@@ -4,7 +4,7 @@ Theme URI: https://github.com/bbertucc/Nimbly
 Author: Blake Bertuccelli
 Author URI: https://www.linkedin.com/in/blakebertuccelli
 Description: A very nimble WordPress theme.
-Version: 0.1 Alpha
+Version: Alpha .1
 */
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
@@ -248,16 +248,16 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   background-repeat: repeat;
   color: #f8f7f3;
 }
-#featured_articles a.post{
+#featured_articles a.listed_post{
   display: inline-block;
   height: 350px;
   line-height: 1em;
 }
-#featured_articles a.post span{
+#featured_articles a.listed_post span{
   display: block;
   letter-spacing: .1em;
 }
-#featured_articles a.post span.thumbnail{
+#featured_articles a.listed_post span.thumbnail{
   width:100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -266,15 +266,15 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   padding-bottom: 56.6%;
   margin-bottom: .25em; 
 }
-#featured_articles a.post span.category{
+#featured_articles a.listed_post span.category{
   color: #AFAFAF;
   font-size: .8em;
   text-transform: uppercase;
 }
-#featured_articles a.post span.category, #featured_articles a.post span.title{
+#featured_articles a.listed_post span.category, #featured_articles a.listed_post span.title{
   padding: .25em .5em;
 }
-#featured_articles a.post span.title{
+#featured_articles a.listed_post span.title{
   color: #f8f7f3;
   transition: color .2s linear;
 }
@@ -285,11 +285,11 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
 #featured_articles h1 a{
   color: white;
 }
-#featured_articles a.post:hover span.title, #featured_articles h1 a:hover{
+#featured_articles a.listed_post:hover span.title, #featured_articles h1 a:hover{
   color: #5893E8;
 }
 @media (max-width: 768px){
-  #featured_articles a.post{
+  #featured_articles a.listed_post{
     height: auto;
     margin-bottom: 1em;
   }
@@ -302,18 +302,18 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   background-repeat: repeat;
   color: #f8f7f3;
 }
-#post_list a.post{
+#post_list a.listed_post{
   display: inline-block;
   height: 300px;
   line-height: 1.2em;
   padding: .5em;
   overflow: hidden;
 }
-#post_list a.post span{
+#post_list a.listed_post span{
   display: block;
   letter-spacing: .1em;
 }
-#post_list a.post span.thumbnail{
+#post_list a.listed_post span.thumbnail{
   width:100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -321,18 +321,18 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   background-color: #5D5D5D;
   padding-bottom: 56.6%;
 }
-#post_list a.post span.category{
+#post_list a.listed_post span.category{
   font-size: .8em;
   text-transform: uppercase;
 }
-#post_list a.post span.category, #post_list a.post span.title{
+#post_list a.listed_post span.category, #post_list a.listed_post span.title{
   color: #AFAFAF;
   background-color: #2b2c2c;
   padding-top: 5px;
   padding-left: .5em;
   padding-right: .5em;
 }
-#post_list a.post span.title{
+#post_list a.listed_post span.title{
   padding-bottom: 10px;
   max-height: 280px;
   overflow: hidden;
@@ -351,56 +351,57 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
 #post_list h1 a{
   color: white;
 }
-#post_list a.post:hover span.title, #post_list h1 a:hover{
+#post_list a.listed_post:hover span.title, #post_list h1 a:hover{
   color: #5893E8;
 }
 @media (max-width: 768px){
-  #post_list a.post{
+  #post_list a.listed_post{
     height: 250px;
     margin-bottom: 1em;
   }
 }
 
-/* Post Page  */
-#post{
+
+/* Post / Page  */
+.post, .page{
   min-height: 750px;
   padding: 1em;
   border-top: 1px solid rgba(20, 21, 21, 0.20);
   background: #F9F9F9;
 }
 @media (max-width: 1200px){
-  #post{
+  .post, .post{
     min-height: auto;
   }
 }
-#post .meta{
+.post .meta, .page .meta{
   margin: 2em 0;
   padding: 1em 6em 1em 0;
   opacity: .65;
   border-bottom:1px solid #b1b5b5; 
 }
-#post .meta a{
+.post .meta a, .page .meta a{
   color: #141515;
 }
-#post .meta a:hover{
+.post .meta a:hover, .page .meta a:hover{
   color: #5894e8;
 }
-#post .meta a i{
+.post .meta a i, .page .meta a i{
   margin-left: .25em;
 }
-#post .meta .share_buttons{
+.post .meta .share_buttons., .page .meta .share_buttons{
   display: inline-block;
   margin-left: 2em;
 }
 @media (max-width: 768px){
-  #post .meta .share_buttons, #post .meta .date{
+  .post .meta .share_buttons, .post .meta .date{
     display: block;
     margin: .5em 0;
   }
-  #post .meta span{
+  .post .meta span, .page .meta span{
     margin: .5em;
   }
-  #post{
+  .post, .page{
     font-size: .9em;
     padding: 1em;
   }
