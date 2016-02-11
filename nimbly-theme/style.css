@@ -391,7 +391,7 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
 .post .meta a i, .page .meta a i{
   margin-left: .25em;
 }
-.post .meta .share_buttons., .page .meta .share_buttons{
+.share_buttons{
   display: inline-block;
   margin-left: 2em;
 }
@@ -686,7 +686,7 @@ label *, label *:before, label *:after {
   transform: rotate(45deg);
 }
 
-/* The Blake Grid */
+/* Grid */
 .segment{
   padding: 1em;
 }
