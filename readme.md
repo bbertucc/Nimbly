@@ -8,11 +8,13 @@ Nimbly includes a number of simple customizations. WordPress Administers can add
 The "developer" folder can be used to further customize Nimbly. Developers can add [WordPress Action Hooks] to the "custom_functions.php" files, add their styles to "custom_styles.css" or add javascript to "custom_scripts.js". "/developer" will not be effected by future Nimbly updates.
 
 **Custom Theme Hooks**
-* `nimbly_post_meta`: Hook functions into the post page meta section. Additional actions hooked into `nimbly_post_meta` includes:
+* `nimbly_post_meta`: Hook updates the post page meta section. Additional actions hooked into `nimbly_post_meta` includes:
   * `nimbly_post_share_buttons`: Adds basic Facebook and Twitter share buttons.
   * `nimbly_post_data`: Adds the post date.
-* `nimbly_hero`: Hook functions into the top hero section. Additional actions hooked into `nimbly_hero` include:
+* `nimbly_hero`: Hook updates the top hero section. Additional actions hooked into `nimbly_hero` include:
   * `nimbly_hero_content`: Adds optional hero images and video.
+* `nimbly_side_info`: Hook updates the top side info section on posts an pages. Additional actions hooked into `nimbly_side_info` include:
+  * `nimbly_side_info_content`: Replaces the default side info.
 
 *More Nimbly-specific Action Hooks coming soon...*
 
