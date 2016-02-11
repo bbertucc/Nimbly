@@ -32,7 +32,7 @@
             if( have_rows('info_section_links') ):?>
             <ul>          
               <?php while ( have_rows('info_section_links') ) : the_row();?>
-              <li><a title="Link to <?php the_sub_field('link_name');?>" href="<?php the_sub_field('link_url');?>"><?php the_sub_field('link_name');?></a></li>
+              <li><a target="<?php the_sub_field('link_target');?>" title="Link to <?php the_sub_field('link_name');?>" href="<?php the_sub_field('link_url');?>"><?php the_sub_field('link_name');?></a></li>
               <?php endwhile;?>
             </ul>
             <?php endif; ?>
