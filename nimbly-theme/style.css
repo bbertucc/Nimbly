@@ -367,6 +367,8 @@ input[type=checkbox]#mobile_navigation_toggler, label.mobile_navigation_toggle  
   min-height: 750px;
   padding: 1em;
   border-top: 1px solid rgba(20, 21, 21, 0.20);
+}
+.page{
   background: #F9F9F9;
 }
 @media (max-width: 1200px){
@@ -684,7 +686,7 @@ label *, label *:before, label *:after {
   transform: rotate(45deg);
 }
 
-/* Grid */
+/* The Blake Grid */
 .segment{
   padding: 1em;
 }
